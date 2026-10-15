@@ -1,0 +1,29 @@
+name: Universal Template Quality
+on:
+  push:
+    branches: ['feature/**']
+  pull_request:
+    branches: ['main']
+permissions:
+  contents: read
+jobs:
+  tests-build-preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Unit tests
+        run: npm run test
+      - name: Build frontend
+        run: npm run build
+      - name: Generate 60 synthetic previews
+        run: npm run generate -- --all
+      - name: Verify preview receipt
+        run: node -e "const r=require('./preview/preview-receipt.json'); if(r.generated!==60||r.deployed!==0||r.released!==0||r.distinct_sha256!==60)process.exit(1)"
