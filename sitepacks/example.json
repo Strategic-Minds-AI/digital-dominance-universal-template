@@ -1,0 +1,41 @@
+{
+  "pack_id": "draft-roofing-signature",
+  "version": "1.0.0",
+  "source": {
+    "repository": "XTREME-SYSTEMS/digital-dominance",
+    "commit_sha": "b65d4cbfbaa2e3feeb84c073dde801e3d9082e30",
+    "template_id": "signature"
+  },
+  "brand": {
+    "name": "Concept Studio",
+    "contact_phone": "UNVERIFIED",
+    "legal_business_name": "UNVERIFIED PREVIEW BUSINESS"
+  },
+  "industry": {
+    "slug": "roofing",
+    "services": [
+      "Roof inspection",
+      "Roof repairs",
+      "Roof replacement"
+    ]
+  },
+  "design": {
+    "approved_reference": "https://website-launch-engine-xps.vercel.app/",
+    "design_token_version": "launch-home-2026-10-source"
+  },
+  "locations": [
+    {
+      "city": "Preview Market",
+      "region": "UNVERIFIED",
+      "country": "US",
+      "verified_service_area": false,
+      "unique_value": "Preview concept only. Location serviceability and genuinely useful local details must be verified before publication."
+    }
+  ],
+  "provisioning": {
+    "mode": "preview",
+    "approval_required": true,
+    "noindex_until_validated": true
+  },
+  "requested_quantity": 1
+}
